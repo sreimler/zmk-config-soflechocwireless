@@ -73,20 +73,18 @@
 
         default_layer {
 // ------------------------------------------------------------------------------------------------------------------
-// | RGB   |  1  | BRI+|  3   | BRI- | EFF  |                         |  6   |  7    |  8    |  9   |   0   |       |
-// |  ESC  |  Q  |  W  |  E   |  R   |  T   |                         |  Y   |  U    |  I    |  O   |   P   | BKSPC |
+// | EP ON | EPT | RGB | TOG  | BRI+ | EFF  |                         | EPON | EPT   | RGB   | TOG  | BRI+  | EFF   |
+// | BRI-  |  Q  |  W  |  E   |  R   |  T   |                         | BRI- |  U    |  I    |  O   |   P   | BKSPC |
 // |  TAB  |  A  |  S  |  D   |  F   |  G   |                         |  H   |  J    |  K    |  L   |   ;   |   '   |
 // | SHIFT |  Z  |  X  |  C   |  V   |  B   |  MUTE  |        | ExtPw |  N   |  M    |  ,    |  .   |   /   | SHIFT |
 //               | GUI | ALT  | CTRL | LOWER|  ENTER |        | SPACE | RAISE| CTRL  | ALT   | GUI  |
             bindings = <
-&rgb_ug RGB_TOG &kp N1 &rgb_ug RGB_BRI &kp N3 &rgb_ug RGB_BRD &rgb_ug RGB_EFF     &kp N6 &kp N7    &kp N8    &kp N9   &kp N0   &none
-&kp ESC   &kp Q  &kp W    &kp E    &kp R     &kp T                               &kp Y  &kp U     &kp I     &kp O    &kp P    &kp BSPC
-&kp TAB   &kp A  &kp S    &kp D    &kp F     &kp G                               &kp H  &kp J     &kp K     &kp L    &kp SEMI &kp SQT
-&kp LSHFT &kp Z  &kp X    &kp C    &kp V     &kp B  &kp C_MUTE &ext_power EP_TOG &kp N  &kp M     &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
-                 &kp LGUI &kp LALT &kp LCTRL &mo 1  &kp RET    &kp SPACE         &mo 2  &kp RCTRL &kp RALT  &kp RGUI
+&ext_power EP_ON &ext_power EP_TOG &rgb_ug RGB_ON  &rgb_ug RGB_TOG &rgb_ug RGB_BRI &rgb_ug RGB_EFF     &ext_power EP_ON &ext_power EP_TOG &rgb_ug RGB_ON  &rgb_ug RGB_TOG &rgb_ug RGB_BRI &rgb_ug RGB_EFF
+&rgb_ug RGB_BRD  &kp Q             &kp W           &kp E           &kp R           &kp T               &rgb_ug RGB_BRD  &kp U             &kp I           &kp O           &kp P           &kp BSPC
+&kp TAB          &kp A             &kp S           &kp D           &kp F           &kp G               &kp H            &kp J             &kp K           &kp L           &kp SEMI        &kp SQT
+&kp LSHFT        &kp Z             &kp X           &kp C           &kp V           &kp B  &kp C_MUTE  &ext_power EP_TOG &kp N            &kp M           &kp COMMA       &kp DOT         &kp FSLH &kp RSHFT
+                                   &kp LGUI        &kp LALT        &kp LCTRL       &mo 1  &kp RET     &kp SPACE         &mo 2            &kp RCTRL       &kp RALT        &kp RGUI
             >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
         lower_layer {
@@ -105,7 +103,6 @@
                     &trans    &trans      &trans    &trans    &trans   &trans &trans    &trans   &trans          &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
         raise_layer {
@@ -123,7 +120,6 @@
                         &trans       &trans       &trans       &trans  &trans   &trans           &trans    &trans    &trans   &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
     };
 };

@@ -11,9 +11,8 @@
 #include <dt-bindings/zmk/rgb.h>
 
 /*
- * Temporarily here because nice nano v2 spi is not defined on ZMK Yet
- * Source: https://github.com/zmkfirmware/zmk/blob/main/app/boards/shields/reviung41/boards/nice_nano.overlay
- * GitHub Issue: https://github.com/zmkfirmware/zmk/issues/885
+ * RGB test support for PandaKB Sofle Choc.
+ * PandaKB's Sofle Choc ZMK branch uses Pro Micro pin 6 for WS2812 data.
  */
 
 #include <dt-bindings/led/led.h>
@@ -21,13 +20,13 @@
 &pinctrl {
     spi3_default: spi3_default {
         group1 {
-            psels = <NRF_PSEL(SPIM_MOSI, 0, 8)>;
+            psels = <NRF_PSEL(SPIM_MOSI, 0, 6)>;
         };
     };
 
     spi3_sleep: spi3_sleep {
         group1 {
-            psels = <NRF_PSEL(SPIM_MOSI, 0, 8)>;
+            psels = <NRF_PSEL(SPIM_MOSI, 0, 6)>;
             low-power-enable;
         };
     };
@@ -50,7 +49,7 @@
         spi-max-frequency = <4000000>;
 
         /* WS2812 */
-        chain-length = <30>;
+        chain-length = <29>;
         spi-one-frame = <0x70>;
         spi-zero-frame = <0x40>;
 
@@ -61,6 +60,7 @@
 / {
     chosen {
         zmk,underglow = &led_strip;
+        zmk,physical-layout = &josefadamcik_sofle_layout;
     };
 };
 

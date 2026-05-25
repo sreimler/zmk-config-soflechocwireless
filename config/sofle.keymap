@@ -86,10 +86,10 @@
 
             // ------------------------------------------------------------------------------------------------------------------
             // |   `   |  1  |  2  |  3   |  4   |  5   |                         |  6   |  7    |  8    |  9   |   0   |       |
-            // |  ESC  |  Q  |  W  |  E   |  R   |  T   |                         |  Y   |  U    |  I    |  O   |   P   | BKSPC |
-            // |  TAB  |  A  |  S  |  D   |  F   |  G   |                         |  H   |  J    |  K    |  L   |   ;   |   '   |
+            // |  TAB  |  Q  |  W  |  E   |  R   |  T   |                         |  Y   |  U    |  I    |  O   |   P   | BKSPC |
+            // |  ESC  |  A  |  S  |  D   |  F   |  G   |                         |  H   |  J    |  K    |  L   |   ;   |   '   |
             // | SHIFT |  Z  |  X  |  C   |  V   |  B   |  MUTE  |        |       |  N   |  M    |  ,    |  .   |   /   | SHIFT |
-            //               | GUI | ALT  | CTRL | LOWER|  ENTER |        | SPACE | RAISE| CTRL  | ALT   | GUI  |
+            //              | CTRL | ALT  | CMD  | LOWER|  ENTER |        | SPACE | RAISE| CMD   | ALT   | CTRL |
 
             bindings = <
 &kp GRAVE  &kp N1  &kp N2     &kp N3    &kp N4    &kp N5                              &kp N6     &kp N7    &kp N8     &kp N9     &kp N0    &kp DEL
@@ -128,14 +128,14 @@
             display-name = "raise";
 
             // ------------------------------------------------------------------------------------------------------------
-            // | EPT | RGBT | RGB  | RGBOF | BRI+ | BRI- |                 | EFF+ | EFF- | HUE+ | HUE- | SAT+ | SAT- |
-            // |     | INS  | PSCR | GUI   |       |      |                 | PGUP |      |   ^   |      |       |       |
-            // |     | ALT  | CTRL | SHIFT |       | CAPS |                 | PGDN |   <- |   v   |  ->  |  DEL  | BKSPC |
-            // |     | UNDO | CUT  | COPY  | PASTE |      |      |   |      |      |      |       |      |       |       |
+            // |     | BRI- | BRI+ |       |       |      |                 | PREV | PLAY | NEXT | MUTE | VOL- | VOL+ |
+            // |     | INS  | SCRN | MENU  |       |      |                 | PGUP | BACK |  UP  | FWD  | WDEL |      |
+            // |     | ALT  | CTRL | SHIFT |       | CAPS |                 | PGDN | LEFT | DOWN | RIGHT| DEL  |      |
+            // |     | UNDO | CUT  | COPY  | PASTE |      |      |   |      |      | HOME |      | END  |      |      |
             //              |      |       |       |      |      |   |      |      |      |       |      |
 
             bindings = <
-&ext_power EP_TOG  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &trans       &trans     &trans                      &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT  &kp K_MUTE     &kp C_VOLUME_DOWN  &kp C_VOLUME_UP
+&trans             &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &trans       &trans     &trans                      &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT  &kp K_MUTE     &kp C_VOLUME_DOWN  &kp C_VOLUME_UP
 &trans             &kp INS               &kp LC(LS(NUMBER_5))  &kp K_CMENU  &trans     &trans                      &kp PG_UP       &kp LA(LEFT)      &kp UP      &kp LA(RIGHT)  &kp LG(BACKSPACE)  &trans
 &trans             &kp LALT              &kp LCTRL             &kp LSHFT    &trans     &kp CLCK                    &kp PG_DN       &kp LEFT          &kp DOWN    &kp RIGHT      &kp DEL            &trans
 &trans             &kp LG(Z)             &kp LG(X)             &kp LG(C)    &kp LG(V)  &trans    &trans    &trans  &trans          &kp LG(LEFT)      &trans      &kp LG(RIGHT)  &trans             &trans
@@ -150,16 +150,16 @@
 
             // ----------------------------------------------------------------------------------------------------------------------------
             // | BTCLR  |  BT1    |  BT2    |   BT3   |   BT4   |   BT5   |                  |      |      |       |      |       |       |
-            // | EXTPWR | RGB_HUD | RGB_HUI | RGB_SAD | RGB_SAI | RGB_EFF |                  |      |      |       |      |       |       |
-            // |        | RGB_BRD | RGB_BRI |         |         |         |                  |      |      |       |      |       |       |
-            // |        |         |         |         |         |         | RGB_TOG | |      |      |      |       |      |       |       |
+            // | EXTPWR | RGB_HUD | RGB_HUI | RGB_SAD | RGB_SAI |         |                  |      |      |       |      |       |       |
+            // |        | RGB_BRD | RGB_BRI | RGB_OFF | RGB_TOG | RGB_ON  |                  |      |      |       |      |       |       |
+            // |        | RGB_EFR | RGB_EFF | RGB_SPD | RGB_SPI |         | RGB_TOG | |      |      |      |       |      |       |       |
             //                    |         |         |         |         |         | |      |      |      |       |      |
 
             bindings = <
 &bt BT_CLR         &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                               &none  &none  &none  &none  &none  &none
-&ext_power EP_TOG  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &rgb_ug RGB_EFF                            &none  &none  &none  &none  &none  &none
-&none              &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &none            &none            &none                                      &none  &none  &none  &none  &none  &none
-&none              &none            &none            &none            &none            &none            &rgb_ug RGB_TOG    &none  &none  &none  &none  &none  &none  &none
+&ext_power EP_TOG  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &none                                      &none  &none  &none  &none  &none  &none
+&none              &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_OFF  &rgb_ug RGB_TOG  &rgb_ug RGB_ON                             &none  &none  &none  &none  &none  &none
+&none              &rgb_ug RGB_EFR  &rgb_ug RGB_EFF  &rgb_ug RGB_SPD  &rgb_ug RGB_SPI  &none            &rgb_ug RGB_TOG    &none  &none  &none  &none  &none  &none  &none
                                     &none            &none            &none            &none            &tog 3             &none  &none  &none  &none  &none
             >;
         };

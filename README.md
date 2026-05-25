@@ -7,7 +7,7 @@ ZMK firmware config for a PandaKB-branded AliExpress Sofle Choc wireless RGB kit
 - RGB works on both halves.
 - OLED support is enabled in firmware, but the OLED modules should stay unplugged until their undersides are insulated.
 - The current keymap is customized for macOS.
-- A ZMK Studio left-half artifact builds. The normal left artifact is kept as the simpler daily-use fallback.
+- The left-half build uses ZMK Studio because the Studio artifact worked well in practice.
 - This repo is pinned to ZMK `v0.2` because it is the current known-good build.
 
 ## ⌨️ Keymap
@@ -70,20 +70,17 @@ External power toggle is on adjust at the `` ` `` key position on the second row
 
 The build creates these UF2 files:
 
-- `sofle_left_pandakb_default.uf2`
 - `sofle_left_pandakb_default_studio.uf2`
 - `sofle_right_pandakb_default.uf2`
 
-Use the normal left artifact when you want the simplest, lowest-moving-parts firmware. Use the Studio artifact when you specifically want ZMK Studio over USB.
-
-The normal left artifact is probably worth keeping because it gives us a known-simple fallback if Studio RPC, USB UART, or a future ZMK Studio change ever causes weirdness. The downside is tiny: one extra UF2 in the artifact zip.
+Use the Studio artifact for the left half. The previous non-Studio left artifact was only a troubleshooting fallback, and the Studio build worked well enough that the extra artifact is no longer worth keeping in the normal build matrix.
 
 On macOS, copying a UF2 can show `Input/output error` if the bootloader reboots immediately after accepting the file. If the keyboard restarts and the new firmware works, the copy error can be ignored.
 
 If Finder copy fails, this often still works:
 
 ```sh
-cat firmware-pandakb-main-keymap/sofle_left_pandakb_default.uf2 > /Volumes/NICENANO/FLASH.UF2
+cat firmware-pandakb-main-latest/sofle_left_pandakb_default_studio.uf2 > /Volumes/NICENANO/FLASH.UF2
 sync
 ```
 

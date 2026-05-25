@@ -22,6 +22,11 @@ Daily layer notes:
 - Raise has brightness, media, navigation, delete, and clipboard shortcuts.
 - Adjust has RGB, Bluetooth, and external power controls.
 
+Left encoder:
+
+- Rotate: volume down/up.
+- Press: play/pause.
+
 ## 🧭 Layer Access
 
 | Action | Result |

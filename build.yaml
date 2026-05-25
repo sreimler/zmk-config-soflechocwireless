@@ -15,12 +15,12 @@
 include:
   - board: nice_nano_v2
     shield: sofle_left
-    artifact-name: sofle_left_pandakb_rgb
+    artifact-name: sofle_left_pandakb_default
   - board: nice_nano_v2
     shield: sofle_left
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n -DCONFIG_ZMK_STUDIO_LOCK_ON_DISCONNECT=n
-    artifact-name: sofle_left_pandakb_rgb_studio
+    artifact-name: sofle_left_pandakb_default_studio
   - board: nice_nano_v2
     shield: sofle_right
-    artifact-name: sofle_right_pandakb_rgb
+    artifact-name: sofle_right_pandakb_default

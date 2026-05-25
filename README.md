@@ -7,7 +7,7 @@ ZMK firmware config for a PandaKB-branded AliExpress Sofle Choc wireless RGB kit
 - RGB works on both halves.
 - OLED support is enabled in firmware, but the OLED modules should stay unplugged until their undersides are insulated.
 - The current keymap is customized for macOS.
-- A ZMK Studio left-half artifact builds, but the normal artifact is still the safer default for flashing.
+- A ZMK Studio left-half artifact builds. The normal left artifact is kept as the simpler daily-use fallback.
 - This repo is pinned to ZMK `v0.2` because it is the current known-good build.
 
 ## ⌨️ Keymap
@@ -69,14 +69,16 @@ The build creates these UF2 files:
 - `sofle_left_pandakb_default_studio.uf2`
 - `sofle_right_pandakb_default.uf2`
 
-Use the non-Studio left artifact first. Use the Studio artifact after the normal firmware works.
+Use the normal left artifact when you want the simplest, lowest-moving-parts firmware. Use the Studio artifact when you specifically want ZMK Studio over USB.
+
+The normal left artifact is probably worth keeping because it gives us a known-simple fallback if Studio RPC, USB UART, or a future ZMK Studio change ever causes weirdness. The downside is tiny: one extra UF2 in the artifact zip.
 
 On macOS, copying a UF2 can show `Input/output error` if the bootloader reboots immediately after accepting the file. If the keyboard restarts and the new firmware works, the copy error can be ignored.
 
 If Finder copy fails, this often still works:
 
 ```sh
-cat firmware-pandakb-default/sofle_left_pandakb_default.uf2 > /Volumes/NICENANO/FLASH.UF2
+cat firmware-pandakb-main-keymap/sofle_left_pandakb_default.uf2 > /Volumes/NICENANO/FLASH.UF2
 sync
 ```
 
@@ -112,7 +114,14 @@ Generated files:
 - `keymap-drawer/sofle.yaml`: parsed keymap data.
 - `keymap-drawer/sofle.svg`: rendered diagram.
 - `keymap-drawer/sofle-layout.dtsi`: local copy of the ZMK `v0.2` Sofle physical layout.
-- `keymap_drawer.config.yaml`: color and styling config.
+- `keymap_drawer.config.yaml`: color, styling, symbols, and friendly shortcut labels.
+
+The drawer config uses `raw_binding_map` to rename exact bindings in the diagram. Examples:
+
+- `&kp LG(Z)` is shown as `Undo`.
+- `&kp LC(LS(NUMBER_5))` is shown as `Screenshot`.
+- `&kp LG(BACKSPACE)` is shown as `Del Line`.
+- Backspace, delete, enter, tab, escape, and arrow keys use symbols.
 
 Regenerate locally:
 

@@ -146,3 +146,29 @@ draw_config:
       fill: #d9f99d;
       stroke: #84cc16;
     }
+parse_config:
+  raw_binding_map:
+    "&kp BACKSPACE": ⌫
+    "&kp BSPC": ⌫
+    "&kp DELETE": ⌦
+    "&kp DEL": ⌦
+    "&kp RETURN": ↵
+    "&kp RET": ↵
+    "&kp ENTER": ↵
+    "&kp ESCAPE": ⎋
+    "&kp ESC": ⎋
+    "&kp TAB": ⇥
+    "&kp LEFT": ←
+    "&kp RIGHT": →
+    "&kp UP": ↑
+    "&kp DOWN": ↓
+    "&kp LC(LS(NUMBER_5))": Screenshot
+    "&kp LA(LEFT)": Prev Word
+    "&kp LA(RIGHT)": Next Word
+    "&kp LG(BACKSPACE)": Del Line
+    "&kp LG(LEFT)": Line Start
+    "&kp LG(RIGHT)": Line End
+    "&kp LG(Z)": Undo
+    "&kp LG(X)": Cut
+    "&kp LG(C)": Copy
+    "&kp LG(V)": Paste

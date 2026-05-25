@@ -127,7 +127,7 @@
 
             bindings = <
 &trans             &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &trans       &trans     &trans                      &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT  &kp K_MUTE     &kp C_VOLUME_DOWN  &kp C_VOLUME_UP
-&trans             &kp INS               &kp LC(LS(NUMBER_5))  &kp K_CMENU  &trans     &trans                      &kp PG_UP       &kp LA(LEFT)      &kp UP      &kp LA(RIGHT)  &kp LG(BACKSPACE)  &trans
+&trans             &kp INS               &kp LG(LS(NUMBER_5))  &kp K_CMENU  &trans     &trans                      &kp PG_UP       &kp LA(LEFT)      &kp UP      &kp LA(RIGHT)  &kp LG(BACKSPACE)  &trans
 &trans             &kp LALT              &kp LCTRL             &kp LSHFT    &trans     &kp CLCK                    &kp PG_DN       &kp LEFT          &kp DOWN    &kp RIGHT      &kp DEL            &trans
 &trans             &kp LG(Z)             &kp LG(X)             &kp LG(C)    &kp LG(V)  &trans    &trans    &trans  &trans          &kp LG(LEFT)      &trans      &kp LG(RIGHT)  &trans             &trans
                                          &trans                &trans       &trans     &mo ADJUST  &tog ADJUST  &trans  &trans          &trans            &trans      &trans
@@ -142,15 +142,15 @@
             // ----------------------------------------------------------------------------------------------------------------------------
             // | BTCLR  |  BT1    |  BT2    |   BT3   |   BT4   |   BT5   |                  |      |      |       |      |       |       |
             // | EXTPWR | RGB_HUD | RGB_HUI | RGB_SAD | RGB_SAI |         |                  |      |      |       |      |       |       |
-            // |        | RGB_BRD | RGB_BRI | RGB_OFF | RGB_TOG | RGB_ON  |                  |      |      |       |      |       |       |
-            // |        | RGB_EFR | RGB_EFF | RGB_SPD | RGB_SPI |         | RGB_TOG | |      |      |      |       |      |       |       |
+            // |        | RGB_EFR | RGB_EFF | RGB_OFF | RGB_TOG | RGB_ON  |                  |      |      |       |      |       |       |
+            // |        | RGB_BRD | RGB_BRI | RGB_SPD | RGB_SPI |         |         | |      |      |      |       |      |       |       |
             //                    |         |         |         |         |         | |      |      |      |       |      |
 
             bindings = <
 &bt BT_CLR         &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                               &none  &none  &none  &none  &none  &none
 &ext_power EP_TOG  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &none                                      &none  &none  &none  &none  &none  &none
-&none              &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_OFF  &rgb_ug RGB_TOG  &rgb_ug RGB_ON                             &none  &none  &none  &none  &none  &none
-&none              &rgb_ug RGB_EFR  &rgb_ug RGB_EFF  &rgb_ug RGB_SPD  &rgb_ug RGB_SPI  &none            &rgb_ug RGB_TOG    &none  &none  &none  &none  &none  &none  &none
+&none              &rgb_ug RGB_EFR  &rgb_ug RGB_EFF  &rgb_ug RGB_OFF  &rgb_ug RGB_TOG  &rgb_ug RGB_ON                             &none  &none  &none  &none  &none  &none
+&none              &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_SPD  &rgb_ug RGB_SPI  &none            &none              &none  &none  &none  &none  &none  &none  &none
                                     &none            &none            &none            &none            &tog ADJUST        &none  &none  &none  &none  &none
             >;
         };

@@ -141,8 +141,7 @@ draw_config:
     .layer-adjust .keypos-37 rect.key,
     .layer-adjust .keypos-38 rect.key,
     .layer-adjust .keypos-39 rect.key,
-    .layer-adjust .keypos-40 rect.key,
-    .layer-adjust .keypos-42 rect.key {
+    .layer-adjust .keypos-40 rect.key {
       fill: #d9f99d;
       stroke: #84cc16;
     }
@@ -162,7 +161,15 @@ parse_config:
     "&kp RIGHT": →
     "&kp UP": ↑
     "&kp DOWN": ↓
-    "&kp LC(LS(NUMBER_5))": Screenshot
+    "&kp C_BRIGHTNESS_DEC": 🔅
+    "&kp C_BRIGHTNESS_INC": 🔆
+    "&kp C_PREVIOUS": ⏮
+    "&kp C_PLAY_PAUSE": ⏯
+    "&kp C_NEXT": ⏭
+    "&kp K_MUTE": 🔇
+    "&kp C_VOLUME_DOWN": 🔉
+    "&kp C_VOLUME_UP": 🔊
+    "&kp LG(LS(NUMBER_5))": 📷
     "&kp LA(LEFT)": Prev Word
     "&kp LA(RIGHT)": Next Word
     "&kp LG(BACKSPACE)": Del Line

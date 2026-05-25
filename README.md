@@ -43,17 +43,17 @@ RGB controls are on adjust.
 
 | Key on Adjust | Binding |
 | --- | --- |
-| `1` | Hue down |
-| `2` | Hue up |
-| `3` | Saturation down |
-| `4` | Saturation up |
-| `Q` | Brightness down |
-| `W` | Brightness up |
+| `Q` | Hue down |
+| `W` | Hue up |
+| `E` | Saturation down |
+| `R` | Saturation up |
+| `A` | Previous effect |
+| `S` | Next effect |
 | `D` | RGB off |
 | `F` | RGB toggle |
 | `G` | RGB on |
-| `Z` | Previous effect |
-| `X` | Next effect |
+| `Z` | Brightness down |
+| `X` | Brightness up |
 | `C` | Animation speed down |
 | `V` | Animation speed up |
 
@@ -121,9 +121,9 @@ Generated files:
 The drawer config uses `raw_binding_map` to rename exact bindings in the diagram. Examples:
 
 - `&kp LG(Z)` is shown as `Undo`.
-- `&kp LC(LS(NUMBER_5))` is shown as `Screenshot`.
+- `&kp LG(LS(NUMBER_5))` is shown as a camera icon.
 - `&kp LG(BACKSPACE)` is shown as `Del Line`.
-- Backspace, delete, enter, tab, escape, and arrow keys use symbols.
+- Brightness, media, backspace, delete, enter, tab, escape, and arrow keys use symbols.
 
 Regenerate locally:
 
